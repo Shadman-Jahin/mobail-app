@@ -1,0 +1,937 @@
+/* ================== */
+/* BASIC OF WEBPAGE*/
+/* ================== */
+
+/* ------- */
+/* font family */
+@font-face {
+  font-family: "poppins";
+  src: url("../font/Poppins-Medium.ttf");
+}
+
+/* ------- */
+/* universal style */
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "poppins";
+  background: #fff;
+}
+
+html {
+  font-size: 10px;
+}
+
+/* ------- */
+/* text style */
+
+h2 {
+  font-size: 3.6rem;
+  font-weight: 600;
+  color: #242f51;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.6rem;
+  color: #616368;
+}
+
+/* ------- */
+/* sections style */
+
+header,
+section,
+footer {
+  max-width: 1500px;
+  margin: 0 20px;
+}
+
+section {
+  padding: 100px 0;
+}
+
+img {
+  display: inline-block;
+}
+
+/* ========= */
+/* HEADER */
+/* ========= */
+
+header {
+  background: url("../images/header background1.png"),
+    url("../images/header backgorund2.png");
+  background-size: auto, contain;
+  background-repeat: no-repeat;
+  background-position: bottom, top left;
+  padding: 100px 0;
+}
+
+/* ---------- */
+/* MENU BAR */
+
+/* basic */
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  height: 150px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffffdf;
+  z-index: 100;
+}
+
+/* ============ */
+/* NAVIGATION */
+
+nav {
+  transition: 0.5s;
+}
+
+nav ul li {
+  display: inline-block;
+  font-size: 1.6rem;
+  margin: 0 15px;
+  transition: 0.3s;
+}
+
+/* ------ */
+/* anchor */
+
+nav a {
+  color: #000;
+  transition: 0.3s;
+  display: block;
+}
+
+nav li {
+  position: relative;
+}
+
+nav a::before,
+nav a::after {
+  transition: 0.3s;
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(to right, blue, red);
+  position: absolute;
+}
+
+nav a::after {
+  background: linear-gradient(to right, red, blue);
+  left: 100%;
+}
+
+nav li:hover a::before,
+nav li:hover a::after {
+  width: 100%;
+  translate: 0% 0;
+  left: 0;
+}
+
+nav li:last-child a::before,
+nav li:last-child a:after {
+  display: none;
+}
+
+/* button */
+
+nav li:last-child a {
+  background: blue;
+  color: #fff;
+  border-radius: 50px;
+  padding: 12px 20px;
+}
+
+nav li:last-child a:hover {
+  background: #fff;
+  color: #00f;
+  box-shadow: 1px 1px 5px 0px inset #aaa;
+}
+
+/* ----------------------- */
+/* RESPONSIVE */
+
+#menubar {
+  display: none;
+}
+
+#menubar:checked ~ nav {
+  left: 100%;
+  translate: -100% 0 0;
+}
+
+#menubar + label {
+  font-size: 30px;
+  display: none;
+}
+
+/* ======================================== */
+/* COMMON */
+/* =========================================*/
+
+/* ----------- */
+/* CONTENT */
+/* ----------- */
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.row .col-2 {
+  flex-basis: 550px;
+}
+
+.row .col-2 > img {
+  margin: auto;
+  display: block;
+  max-width: 100%;
+}
+
+/* button */
+
+.btn {
+  background: #2500f9;
+  color: #fff;
+  border-radius: 50px;
+  padding: 14px 20px;
+  outline: 0;
+  border: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #00f;
+  box-shadow: 1px 1px 5px 0px inset #aaa;
+}
+
+/* ============common end =============== */
+
+/* ----------------- */
+/* HEADER CONTENT */
+/* ----------------- */
+
+/* ------ */
+/* text */
+
+/* choice */
+
+header .choice {
+  background: #e2eaed;
+  border-radius: 50px;
+  display: inline-block;
+  padding: 0 20px 0 0;
+}
+
+header .choice::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+header .choice h3 {
+  display: block;
+  font-size: 1.8rem;
+  line-height: 42px;
+  float: left;
+  margin-left: 10px;
+}
+
+header .choice img {
+  display: block;
+  float: left;
+  height: 42px;
+}
+
+/* heading */
+
+header h1 {
+  font-size: 6rem;
+  font-weight: 600;
+  color: #242f51;
+}
+
+/* paragraph */
+
+header .container p {
+  font-size: 1.8rem;
+  color: #616368;
+}
+
+/* button */
+
+header .btn {
+  margin: 20px 20px 0 0;
+}
+
+/* anchor */
+
+header .btn + a {
+  color: #2500f9;
+  font-size: 1.6rem;
+}
+
+header .btn + a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================ */
+/* APP FEATURE */
+/* ============================================ */
+
+.feature {
+  padding: 0;
+}
+
+/* -------- */
+/* trusted company */
+
+.feature h4 {
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.feature h4 + img {
+  display: block;
+  margin: auto;
+  max-width: 95%;
+}
+
+/* ------------- */
+/* apps feature (main)*/
+
+.app {
+  margin: 100px 0;
+}
+
+/* performance */
+
+.perform {
+  display: flex;
+  margin: 50px 0;
+}
+
+.perform > img {
+  display: block;
+  margin: 0 20px;
+}
+
+.perform h3 {
+  font-size: 2rem;
+  color: #f55767;
+}
+
+/* perform 2 */
+
+.perform2 h3 {
+  color: #2563ff;
+}
+
+/* perform 3 */
+
+.perform3 h3 {
+  color: #40975f;
+}
+
+/* =========== */
+/* JACEPOTS */
+/* =========== */
+
+/* ------ */
+/* basic */
+
+.jackpot {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.jackpot > .head {
+  flex: 0 1 550px;
+}
+
+.jackpot > .main {
+  flex: 0 1 calc(1100px / 3);
+  padding: 0 20px;
+  box-sizing: border-box;
+  height: 250px;
+  margin: 50px 0;
+}
+
+.jackpot > .jack {
+  height: 200px;
+}
+/* ------------- */
+/* specific style */
+
+/* main heading */
+
+.jackpot > .head:first-child {
+  border-right: 2px solid #61636880;
+}
+
+.jackpot > .head h2 {
+  font-size: 4rem;
+}
+
+/* main paragraph */
+
+.jackpot .jack2 {
+  line-height: 200px;
+  padding: 0 50px;
+  box-sizing: border-box;
+  align-self: center;
+}
+
+.jackpot .head p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* jackpot heading */
+
+.jackpot > .jack h3 {
+  margin: 10px 0;
+  color: #f55767;
+}
+
+.jackpot .jack4 h3 {
+  color: #2563ff;
+}
+
+.jackpot .jack5 h3 {
+  color: #40975f;
+}
+
+/* ============================== */
+/* INTEGRATION */
+/* ============================== */
+
+.integration > .text p {
+  margin: 20px 0;
+}
+
+.integration > .text {
+  margin: 100px 0;
+}
+
+/* =================================== */
+/* CHOOSE APP */
+/* =================================== */
+
+/* --------- */
+/* MAIN TEXT */
+
+.choose .text {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.choose .text h2 {
+  margin: 0 auto 50px auto;
+  max-width: 500px;
+}
+
+/* ----------- */
+/* GRID  */
+
+.choose .cause {
+  display: grid;
+  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-rows: repeat(auto-fit, 1fr);
+  justify-content: space-around;
+  grid-gap: 50px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 100px auto;
+}
+
+/* ============================= */
+/* ALTIMATE */
+/* ============================= */
+
+.ultimate .main-content {
+  max-width: 400px;
+}
+
+.ultimate .flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 50px;
+  margin: 50px 0 0 0;
+}
+
+.ultimate .flex .flx {
+  flex-basis: 250px;
+}
+
+/* button */
+
+.ultimate .btn {
+  padding: 13px 40px;
+  margin: 50px 0;
+}
+
+/* ============================== */
+/* CHARGE  */
+/* ============================== */
+
+/* ---------------- */
+/* main text */
+
+.charge .text {
+  text-align: center;
+  max-width: 650px;
+  margin: auto;
+}
+
+/* ---------- */
+/* button */
+
+.charge .button {
+  border: 1px solid #bbb;
+  border-radius: 50px;
+  width: 300px;
+  margin: auto;
+  min-height: 50px;
+  display: flex;
+  padding: 2px;
+  margin: 50px auto;
+}
+
+.charge .button button {
+  flex-grow: 1;
+
+  height: 50px;
+  background: #2500f9;
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 700;
+  border: none;
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
+.charge .button button:last-child {
+  background: transparent;
+  color: #aaa;
+}
+
+/* ----------- */
+/* pricing */
+
+/* main ---------------------------*/
+.charge .flex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  color: #999ca5;
+}
+
+.charge .flex .flx {
+  min-height: 550px;
+  flex-basis: 300px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 15px 0px #bcbcbc;
+}
+
+/*  --------------- */
+/* specific style (upper)*/
+
+.charge .amount {
+  text-align: center;
+  padding: 50px 0;
+  background: linear-gradient(to top, #efefef, #fff);
+}
+/* heading */
+
+.charge .flex h2 {
+  font-size: 6rem;
+  font-weight: 600;
+  color: #242f51;
+}
+
+.charge .flex h2 > span {
+  font-size: 1.8rem;
+  display: inline-block;
+  color: #999ca5;
+  transform: translateX(-15px);
+}
+
+.charge .flex h3 {
+  color: #242f51;
+}
+
+/* paragraph */
+
+.charge .flex p {
+  color: #999ca5;
+}
+
+/* ---------- */
+/* lower */
+
+.charge .details {
+  padding: 20px 50px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.charge .details ul li {
+  margin: 20px 0;
+}
+
+/* button */
+
+.charge .flx .btn {
+  padding: 20px 40px;
+  display: block;
+  margin: auto;
+}
+
+/* anchor */
+
+.charge .flx .btn + a {
+  font-size: 1.6rem;
+  color: #2500f9;
+  display: block;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.charge .flx .btn + a:hover {
+  text-decoration: underline;
+}
+
+/* =================== */
+/* SATISFACTION */
+/* =================== */
+
+/* basis */
+
+.satisfy .text {
+  margin: 50px 0;
+}
+
+.satisfy .text p {
+  margin: 20px 0;
+}
+
+.satisfy .rating {
+  margin: 20px 0;
+  color: #ffcc00;
+  font-size: 1.8rem;
+}
+
+/* ---------------- */
+/* single client */
+
+/* basic */
+
+.satisfy .client {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* name */
+
+.satisfy .client > .name-cl {
+  margin: 0 auto 0 20px;
+}
+
+.satisfy .client p {
+  margin: 0;
+}
+
+/* switch */
+
+.satisfy .client > .switch-cl span {
+  --left: #bbb;
+
+  color: var(--left);
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 3rem;
+  font-weight: 900;
+  border: 1px solid var(--left);
+  border-radius: 50%;
+  line-height: 50px;
+  text-align: center;
+  position: relative;
+  margin: 0 5px;
+  transition: 0.5s;
+}
+
+.satisfy .client span:hover {
+  background: #5c42f9;
+  color: #eff3f8;
+  cursor: pointer;
+}
+
+.satisfy .client > .switch-cl span:first-child:hover::after {
+  background: #5c42f9;
+}
+
+.satisfy .client > .switch-cl span:first-child::after {
+  content: "";
+  display: block;
+  width: 1.5px;
+  height: 50px;
+  background: var(--left);
+  position: absolute;
+  top: 0;
+  border-radius: 10px;
+  left: calc(100% + 6px);
+}
+
+.satisfy .client > .switch-cl span:last-child {
+  background: #eff3f8;
+  color: #5c42f9;
+}
+
+/* ============================ */
+/* QUESTOINS */
+/* ============================ */
+
+/* ---------- */
+/* basic */
+
+.quation {
+  margin: 0 20px;
+}
+
+.quation .text {
+  max-width: 650px;
+  margin: auto;
+  text-align: center;
+}
+
+.quation .main-content {
+  margin: 100px auto;
+  max-width: 1000px;
+  min-width: 500px;
+}
+
+/* ------------------- */
+/* main questions */
+
+/* basic */
+
+#accordion li {
+  margin: 20px 0;
+  border-radius: 10px;
+  padding: 10px 50px;
+  background: #eee;
+}
+
+#accordion label {
+  color: #242f51;
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* arrow */
+
+#accordion span {
+  font-size: 4rem;
+  transform: rotate(0deg);
+  color: #616368;
+  transition: 0.5s;
+  color: darkblue;
+}
+
+/* radio button(hide) */
+
+#accordion input {
+  display: none;
+}
+
+#accordion input ~ p {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+/* onclick (active) */
+
+#accordion input:checked ~ p {
+  max-height: 300px;
+}
+
+#accordion input:checked + label span {
+  transform: rotate(90deg);
+  color: #aaa;
+}
+
+/* ============================ */
+/* FOOTER  */
+/* ============================ */
+
+/* --------- */
+/* basic */
+
+footer {
+  min-height: 300px;
+  background: url("../images/header\ backgorund2.png"), #000;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 50px 0;
+  background-origin: content-box;
+}
+
+/* ------- */
+/* image */
+
+footer img {
+  display: inline-block;
+}
+
+/* ------------- */
+/* social icons */
+
+/* basic */
+
+footer .navigate {
+  margin: 50px 0;
+}
+
+footer .navigate li {
+  display: inline-block;
+  font-size: 2rem;
+  margin: 20px;
+  position: relative;
+}
+
+/* anchor */
+
+footer .navigate a {
+  color: #fff;
+  display: block;
+  width: 100%;
+}
+
+/* extra styles */
+
+footer .navigate li a::before,
+footer .navigate li a::after {
+  content: "";
+  display: block;
+  background: linear-gradient(to left, red, lime);
+  width: 0%;
+  transition: 0.3s;
+  height: 2px;
+  position: absolute;
+}
+
+footer .navigate li a::after {
+  background: linear-gradient(to right, red, rgb(0, 159, 0));
+  left: 100%;
+}
+
+/* hover effect */
+
+footer .navigate li:hover a::before,
+footer .navigate li:hover a::after {
+  width: 100%;
+  left: 0;
+}
+
+/* -------- */
+/* address */
+
+footer address {
+  font-size: 2rem;
+  color: wheat;
+  position: relative;
+  display: inline-block;
+}
+
+footer em {
+  display: inline-block;
+  background: linear-gradient(to left,  red,blue);
+  color: transparent;
+  background-clip :text;
+  -webkit-background-clip: text;
+}
+
+footer address span {
+  display: block;
+  position: absolute;
+  background: linear-gradient(
+    to right,
+    rgb(255, 2, 255),
+    red,
+    rgb(255, 0, 255)
+  );
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+
+  /* animation */
+  animation-name: slide;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+
+@keyframes slide {
+  0% {
+    width: 0;
+    left: 50%;
+  }
+
+  100% {
+    width: 100%;
+    left: 0%;
+  }
+}

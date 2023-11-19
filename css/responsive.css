@@ -1,0 +1,32 @@
+@media screen and (max-width: 1200px) {
+  .jackpot > .head:nth-child(2) {
+    flex-basis: calc(1100px / 3);
+    padding: 0 20px;
+  }
+
+  nav {
+    position: fixed;
+    top: 100px;
+    left: 100%;
+    background: #ffffff44;
+    backdrop-filter: blur(10px);
+    width: 500px;
+    height: calc(100% - 100px);
+  }
+
+  nav ul li {
+    display: block;
+    width: fit-content;
+    margin: 50px auto;
+  }
+
+  #menubar + label {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  nav {
+    width: 100%;
+  }
+}
